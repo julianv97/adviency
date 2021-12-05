@@ -15,8 +15,8 @@ const Form = ({ addGift }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input type="text" name="gift" />
+    <form onSubmit={handleSubmit} className="w-full flex  justify-between">
+      <input type="text" name="gift" className="w-full mr-7" />
       <Button type="submit" />
     </form>
   );

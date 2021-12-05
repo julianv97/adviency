@@ -9,14 +9,14 @@ function App() {
   const { gifts, addGift, deleteGift, deleteAllGifts } = useGifts();
 
   return (
-    <div className="w-full h-screen flex justify-center items-center App">
-      <div>
-        <h1>Gifts</h1>
+    <div className="w-full min-h-screen h-full flex justify-center items-center App">
+      <div className="bg-green-600 p-4 min-w-max w-3/12 rounded-lg flex flex-col items-center">
+        <h1 className="text-center align-top">Gifts</h1>
         <Form addGift={addGift} />
         {gifts.length === 0 ? (
-          <p>No gifts yet</p>
+          <p>No gifts yet &#128532;</p>
         ) : (
-          <div>
+          <div className="w-full flex flex-col items-stretch justify-between">
             <ListOfGifs gifts={gifts} deleteGift={deleteGift} />
             <Button type="deleteAll" onClick={deleteAllGifts} />
           </div>
