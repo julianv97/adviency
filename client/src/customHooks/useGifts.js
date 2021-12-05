@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 
-const useGifts = (url) => {
+const url = process.env.REACT_APP_API
+
+const useGifts = () => {
   const [gifts, setGifts] = useState([]);
 
   const addGift = (gift) => {
@@ -48,7 +50,7 @@ const useGifts = (url) => {
       .then((response) => response.json())
       .then((data) => setGifts(data))
       .catch((err) => console.log(err));
-  }, [url]);
+  }, []);
 
   return { gifts, addGift, deleteGift, deleteAllGifts };
 };

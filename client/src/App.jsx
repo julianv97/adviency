@@ -5,10 +5,8 @@ import Form from './Components/Form';
 import Button from './Components/Shared/Button';
 import './App.css';
 
-const url = 'http://localhost:4000/gifts';
-
 function App() {
-  const { gifts, addGift, deleteGift, deleteAllGifts } = useGifts(url);
+  const { gifts, addGift, deleteGift, deleteAllGifts } = useGifts();
 
   return (
     <div className="w-full h-screen flex justify-center items-center App">
