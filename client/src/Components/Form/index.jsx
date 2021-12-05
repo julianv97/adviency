@@ -1,5 +1,6 @@
 import React from 'react';
-import { IoIosAddCircle } from 'react-icons/io';
+
+import Button from '../Shared/Button';
 
 const Form = ({ addGift }) => {
   const handleSubmit = (e) => {
@@ -16,9 +17,7 @@ const Form = ({ addGift }) => {
   return (
     <form onSubmit={handleSubmit}>
       <input type="text" name="gift" />
-      <button type="submit">
-        <IoIosAddCircle />
-      </button>
+      <Button type="submit" />
     </form>
   );
 };

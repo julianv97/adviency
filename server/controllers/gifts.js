@@ -20,8 +20,15 @@ const deleteGift = (req, res) => {
     .catch((err) => res.status(404).json(err));
 };
 
+const deleteAllGifts = (req, res) => {
+  Gift.deleteMany()
+    .then((gifts) => res.status(200).json(gifts))
+    .catch((err) => res.status(404).json(err));
+};
+
 module.exports = {
   getAll,
   createGift,
   deleteGift,
+  deleteAllGifts,
 };
