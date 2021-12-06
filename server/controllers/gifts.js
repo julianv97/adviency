@@ -1,7 +1,7 @@
 const Gift = require('../models/Gift');
 
 const getAll = (req, res) => {
-  Gift.find()
+  Gift.find({ isDeleted: false })
     .then((gifts) => res.status(200).json(gifts))
     .catch((err) => res.status(404).json(err));
 };
@@ -15,13 +15,13 @@ const createGift = (req, res) => {
 };
 
 const deleteGift = (req, res) => {
-  Gift.findByIdAndDelete(req.params.id)
+  Gift.findByIdAndUpdate(req.params.id, { isDeleted: true })
     .then((gift) => res.status(200).json(gift))
     .catch((err) => res.status(404).json(err));
 };
 
 const deleteAllGifts = (req, res) => {
-  Gift.deleteMany()
+  Gift.updateMany({}, { isDeleted: true })
     .then((gifts) => res.status(200).json(gifts))
     .catch((err) => res.status(404).json(err));
 };
